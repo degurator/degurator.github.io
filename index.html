@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $('#button1').click(function() {
+    var selected = [];
+    var orangeTeam = [];
+    var blackTeam = [];
+    
+    $('#players input:checked').each(function() {
+      selected.push($(this).attr('name'));
+    });
+    
+    while (selected.length) {
+      if (Math.random() < 0.5) {
+        orangeTeam.push(selected.shift());    
+        if (selected.length) {
+          blackTeam.push(selected.shift());
+        }
+      } else{
+        blackTeam.push(selected.shift());
+        if (selected.length) {
+          orangeTeam.push(selected.shift());
+        }
+      }
+    }
+    $('#result1').val("Oranssit: " + orangeTeam + " \nMustat: " + blackTeam);
+  });
+  
+  
+  $('#button2').click(function() {
+    var text1 = document.getElementById("result1");
+    text1.select();
+    document.execCommand("copy");
+  });
+
+});
+</script>
+</head>
+
+<body>
+
+<h2>Degurator</h2>
+
+<div>Valitse pelaajat</div>
+<div id="players">
+  <table>
+    <tr>
+      <td><input type="checkbox" name="Jari"></td>
+      <td>Jari</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="HarriK"></td>
+      <td>HarriK</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Joham"></td>
+      <td>Joham</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Fathi"></td>
+      <td>Fathi</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Julio"></td>
+      <td>Julio</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Samuli"></td>
+      <td>Samuli</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Helle"></td>
+      <td>Helle</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Piipari"></td>
+      <td>Piipari</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Sami"></td>
+      <td>Sami</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Pepe"></td>
+      <td>Pepe</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Saibu"></td>
+      <td>Saibu</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Kipa"></td>
+      <td>Kipa</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Tuke"></td>
+      <td>Tuke</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="Tube"></td>
+      <td>Tube</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Jaakko"></td>
+      <td>Jaakko</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Rade"></td>
+      <td>Rade</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Tomi"></td>
+      <td>Tomi</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Lauri"></td>
+      <td>Lauri</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Väppe"></td>
+      <td>Väppe</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Vilo"></td>
+      <td>Vilo</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="AapoJr"></td>
+      <td>AapoJr</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="AapoSr"></td>
+      <td>AapoSr</td>
+    </tr>    
+    <tr>
+      <td><input type="checkbox" name="TimoR"></td>
+      <td>TimoR</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Vieras 1"></td>
+      <td>Vieras 1</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Vieras 2"></td>
+      <td>Vieras 2</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Vieras 3"></td>
+      <td>Vieras 3</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Vieras 4"></td>
+      <td>Vieras 4</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Vieras 5"></td>
+      <td>Vieras 5</td>
+    </tr>
+  </table>
+</div>
+
+<button type="button" id="button1">Luo joukkueet</button>
+<br>
+<textarea id="result1" cols="120" rows="2" readonly></textarea>
+<br>
+<button type="button" id="button2">Kopioi teksti</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>
