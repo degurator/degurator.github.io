@@ -38,7 +38,23 @@ $(document).ready(function(){
     document.execCommand("copy");
   });
 
+  $("#players input:checkbox").change(function() {
+    updateCounter();
+  });  
 });
+
+$(window).on('load', function() {
+  updateCounter();
+});
+
+function updateCounter() {
+  var total = 0;
+  $('#players input:checkbox:checked').each(function() {
+    total++;
+  });
+  $('#totalsdiv').text("Valittu: " + total);
+}
+  
 </script>
 </head>
 
@@ -50,120 +66,116 @@ $(document).ready(function(){
 <div id="players">
   <table>
     <tr>
-      <td><input type="checkbox" name="Jari"></td>
+      <td><input type="checkbox" name=" Jari"></td>
       <td>Jari</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="HarriK"></td>
+      <td><input type="checkbox" name=" HarriK"></td>
       <td>HarriK</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Joham"></td>
+      <td><input type="checkbox" name=" Joham"></td>
       <td>Joham</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Fathi"></td>
+      <td><input type="checkbox" name=" Fathi"></td>
       <td>Fathi</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Julio"></td>
+      <td><input type="checkbox" name=" Julio"></td>
       <td>Julio</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Samuli"></td>
+      <td><input type="checkbox" name=" Samuli"></td>
       <td>Samuli</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Helle"></td>
+      <td><input type="checkbox" name=" Helle"></td>
       <td>Helle</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Piipari"></td>
+      <td><input type="checkbox" name=" Piipari"></td>
       <td>Piipari</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Sami"></td>
+      <td><input type="checkbox" name=" Sami"></td>
       <td>Sami</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Pepe"></td>
+      <td><input type="checkbox" name=" Pepe"></td>
       <td>Pepe</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Saibu"></td>
+      <td><input type="checkbox" name=" Saibu"></td>
       <td>Saibu</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Kipa"></td>
+      <td><input type="checkbox" name=" Kipa"></td>
       <td>Kipa</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Tuke"></td>
+      <td><input type="checkbox" name=" Tuke"></td>
       <td>Tuke</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="Tube"></td>
+      <td><input type="checkbox" name=" Tube"></td>
       <td>Tube</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Jaakko"></td>
+      <td><input type="checkbox" name=" Jaakko"></td>
       <td>Jaakko</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Rade"></td>
+      <td><input type="checkbox" name=" Rade"></td>
       <td>Rade</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Tomi"></td>
+      <td><input type="checkbox" name=" Tomi"></td>
       <td>Tomi</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Lauri"></td>
+      <td><input type="checkbox" name=" Lauri"></td>
       <td>Lauri</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Väppe"></td>
+      <td><input type="checkbox" name=" Väppe"></td>
       <td>Väppe</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Vilo"></td>
+      <td><input type="checkbox" name=" Vilo"></td>
       <td>Vilo</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="AapoJr"></td>
-      <td>AapoJr</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="AapoSr"></td>
-      <td>AapoSr</td>
+      <td><input type="checkbox" name=" AapoSr"></td>
+      <td>Aapo Sr</td>
     </tr>    
     <tr>
-      <td><input type="checkbox" name="TimoR"></td>
+      <td><input type="checkbox" name=" TimoR"></td>
       <td>TimoR</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Vieras 1"></td>
+      <td><input type="checkbox" name=" Vieras 1"></td>
       <td>Vieras 1</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Vieras 2"></td>
+      <td><input type="checkbox" name=" Vieras 2"></td>
       <td>Vieras 2</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Vieras 3"></td>
+      <td><input type="checkbox" name=" Vieras 3"></td>
       <td>Vieras 3</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Vieras 4"></td>
+      <td><input type="checkbox" name=" Vieras 4"></td>
       <td>Vieras 4</td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="Vieras 5"></td>
+      <td><input type="checkbox" name=" Vieras 5"></td>
       <td>Vieras 5</td>
     </tr>
   </table>
 </div>
-
+<div id="totalsdiv"></div>
 <button type="button" id="button1">Luo joukkueet</button>
 <br>
 <textarea id="result1" cols="120" rows="2" readonly></textarea>
