@@ -16,15 +16,27 @@ $(document).ready(function(){
     });
     
     while (selected.length) {
-      if (Math.random() < 0.5) {
-        orangeTeam.push(selected.shift());    
-        if (selected.length) {
-          blackTeam.push(selected.shift());
-        }
-      } else{
+      if (selected[0] == "TimoR") {
         blackTeam.push(selected.shift());
         if (selected.length) {
           orangeTeam.push(selected.shift());
+        }        
+      } else if (selected[1] == "TimoR") {
+        orangeTeam.push(selected.shift());
+        if (selected.length) {
+          blackTeam.push(selected.shift());
+        }        
+      } else {    
+        if (Math.random() < 0.5) {
+          orangeTeam.push(selected.shift());    
+          if (selected.length) {
+            blackTeam.push(selected.shift());
+          }
+        } else{
+          blackTeam.push(selected.shift());
+          if (selected.length) {
+            orangeTeam.push(selected.shift());
+          }
         }
       }
     }
